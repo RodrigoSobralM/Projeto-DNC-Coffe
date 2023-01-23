@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Montserrat:wght@300&family=Poppins:wght@500&family=Raleway:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="navBar">
+            <img src="img/logo.svg" alt="">
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="" onclick="showModal()">sobre</a>
+                </li>
+                <li>
+                    <a href="">Ajuda</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <button>Fazer pedido</button>
+        </div>
+    </header>
+    <main>
+        <img src="img/bannerPrin.svg" alt="">
+    </main>
+    <section>
+        <div id="cards">
+            <div class="card" onmouseover="expandir()" onmouseout="expandir()" onmouseleave="restaurar('#card1')">
+                <div>
+                    <img src="img/card1.svg" alt="">
+                    
+                </div>
+                <div class="textCard">
+                    <p>Nossa loja de café se encontra em um lugar, 
+                        100% fictício, porém caso se sinta interessado
+                        pode vir tomar um café conosco em nossa sed<span id="allCard">...</span>
+                    </p>
+                </div>
+                <div  onmouseleave="restaurar()">
+                    <button class="btnCard">COMPRAR AGORA</button>
+                </div>
+            </div>
+            <div class="card" onmouseover="expandir()" onmouseout="expandir()" onmouseleave="restaurar('#card2')">
+                <div>
+                    <img src="img/card2.svg" alt="">
+                </div>
+                <div class="textCard">
+                    <p>Nossa casa de café é a melhor da região, aqui
+                        você tem tudo que precisa, uma boa conversar,
+                        bons amigos e um ambiente sem igual<span id="allCard">...</span>
+                    </p>
+                </div>
+                <div onmouseleave="restaurar()" >
+                    <button class="btnCard">COMPRAR AGORA</button>
+                </div>
+            </div>
+            <div class="card" onmouseover="expandir()" onmouseout="expandir()" onmouseleave="restaurar('#card3')">
+                <div>
+                    <img src="img/card3.svg" alt="">
+                </div>
+                <div class="textCard">
+                    <p>Por que a DNC? Porque podem contar sempre
+                        com um serviço genuíno, uma atmosfera
+                        acolhedora e uma incrível xícara de café,<span id="allCard">...</span></p>
+                </div>
+                <div  onmouseleave="restaurar()">
+                    <button class="btnCard">COMPRAR AGORA</button>
+                </div>
+            </div>
+            <div class="card" onmouseover="expandir()" onmouseout="expandir()">
+                <div>
+                    <img src="img/card4.svg" alt="">
+                </div>
+                <div class="textCard">
+                    <p>A escola especialista em formar talentos, com foco em empregabilidade, migração de carreira e aumento de performance.</p>
+                </div>
+                <div  onmouseleave="restaurar()">
+                    <button class="btnCard">COMPRAR AGORA</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="modal"></div>
+    
+<script src="main.js"></script>
+</body>
+</html>
