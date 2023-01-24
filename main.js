@@ -6,12 +6,12 @@ const text = [
 ];
 
 function expandir(selector1, selector2, selector3) {
+    
     let cards = document.querySelectorAll(selector1)
     let texts = document.querySelectorAll(selector2)
     let btnCard = document.querySelectorAll(selector3)
-    console.log(btnCard)
-    
     let arrayCard = Array.from(document.querySelectorAll('.card'))
+
     for(let i = 0; i < cards.length; i++) { 
         texts[i].innerHTML = text[arrayCard.indexOf(cards[i])].paragraph
         cards[i].style.height = '434px';
@@ -21,6 +21,7 @@ function expandir(selector1, selector2, selector3) {
 }
 
 function restaurar(selector1, selector2 ,selector3) {
+
     let cards = document.querySelectorAll(selector1)
     let texts = document.querySelectorAll(selector2)
     let btnCard = document.querySelectorAll(selector3)
