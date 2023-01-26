@@ -132,7 +132,9 @@ section {
     margin-left: 24px;
 }
 
-
+.card img {
+    border-radius: 8px 8px  0 0;
+}
 
 .textCard {
     overflow: hidden;
@@ -170,12 +172,6 @@ section {
     color: #F6F5FB;
     text-align: center;
     cursor: pointer;
-}
-
-/* Estilo utilizado pela função toggle no js */
-
-.card-highLigth {
-    height: 500px;
 }
 
 /* Estilo do modal */
