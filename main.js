@@ -5,6 +5,22 @@ const text = [
     {paragraph: ''}
 ];
 
+var intervalId
+var progress = 0
+
+function atualizarProgresso() {
+    progress += 10;
+    document.querySelector('#progress-container').style.width = progress + "%"
+    if(progress == 100) {
+        clearInterval(intervalId)
+        document.querySelector('.loading-page').style.display = 'none'
+    }
+}
+window.onload = function() {
+    intervalId = setInterval(atualizarProgresso, 400);
+}
+
+
 function expandir(selector1, selector2, selector3) {
     
     let cards = document.querySelectorAll(selector1)
