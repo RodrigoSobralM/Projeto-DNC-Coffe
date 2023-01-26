@@ -17,7 +17,7 @@ function atualizarProgresso() {
     }
 }
 window.onload = function() {
-    intervalId = setInterval(atualizarProgresso, 400);
+    intervalId = setInterval(atualizarProgresso, 1000);
 }
 
 
