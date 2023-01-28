@@ -19,9 +19,7 @@ function atualizarProgresso() {
 window.onload = function() {
     intervalId = setInterval(atualizarProgresso, 600);
 }
-
-function expandir(){
-    setTimeout(function (selector1, selector2, selector3) {
+function expandir(selector1, selector2, selector3) {
         let cards = document.querySelectorAll(selector1)
         let texts = document.querySelectorAll(selector2)
         let btnCard = document.querySelectorAll(selector3)
@@ -32,7 +30,6 @@ function expandir(){
             cards[i].style.height = '434px';
             btnCard[i].style.visibility = 'visible'
         }
-    }, 5000)
 }   
 
 function restaurar(selector1, selector2 ,selector3) {
