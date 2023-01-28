@@ -64,14 +64,17 @@ header {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 80px;
+    width: 100%;
     justify-content: space-between;
 }
+
 .navBar {
     width: 55%;
     display: flex;
     margin-left: 30px;
     align-items: center;
 }
+
 .navBar ul {
     display: flex;
     list-style-type: none;
@@ -82,11 +85,12 @@ header {
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    display: flex;
     align-items: center;
     color: #2A3342;
     padding: 0 0 0 45px;
+    width: 100%;
 }
+
 header button {
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -108,8 +112,10 @@ header button:hover {
     background: #D1D1D1;
 }
 /* Estilo do banner principal da main */
-
-main img {
+#bannerPrincipal {
+    width: 100%;
+}
+#bannerPrincipal img {
     width: 100%;
 }
 
@@ -279,7 +285,58 @@ section {
     margin-top: 65px;
     cursor: pointer;
 }
+/* Esilização mobile */
 
+@media only screen and (max-width: 600px) {
+    
+    .navBar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        margin: 0;
+        padding: 40;
+    }
+
+    .btnNavBar {
+        margin-top: -60px;
+        width: 100%;
+        margin-left: 50px;
+    }
+
+    .navBar ul {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        
+    }
+    
+    .navBar ul li {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 42px;
+    }
+
+    header {
+        height: 150px;
+    }
+
+    #cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card {
+        margin-left: 43px;
+    }
+
+    #bannerPrincipal img {
+        width: 100%;   
+    }
+}
 /* Animação de loading */
 
 @keyframes spin {
