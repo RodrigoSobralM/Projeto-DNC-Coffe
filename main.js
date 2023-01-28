@@ -7,11 +7,11 @@ const text = [
 
 var intervalId
 var progress = 0
-
+var progressContainer = document.querySelector('#progress-container')
 function atualizarProgresso() {
-    progress += 10;
-    document.querySelector('#progress-container').style.width = progress + "%"
-    if(progress == 100) {
+    progress +=10;
+    progressContainer.innerHTML = progress + "%"
+    if(progress == 110) {
         clearInterval(intervalId)
         document.querySelector('.loading-page').style.display = 'none'
     }

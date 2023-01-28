@@ -31,8 +31,15 @@ body {
 }
 
 #progress-container {
-    margin-top: 10px;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 69px;
+    color: #FFFFFF;
+    margin: 0;
 }
+
 #progress-bar {
     position: relative;
     width: 50px;
