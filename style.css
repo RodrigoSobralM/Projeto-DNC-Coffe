@@ -336,6 +336,10 @@ section {
     #bannerPrincipal img {
         width: 100%;   
     }
+
+    #modal-card {
+        width: 650px;
+    }
 }
 /* Animação de loading */
 
