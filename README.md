@@ -19,7 +19,7 @@ Projeto disciplinar aplicado pela escola DNC (Formação em tecnologia - Desencv
 
 ## Instalação
 
-Baixe o arquivo zip do repositorio e extraia para seu computador. Ou acesse online: https://dnccoffe.netlify.app/
+Baixe o arquivo zip do repositório e extraia para seu computador. Ou acesse online: https://dnccoffe.netlify.app/
 
 
     
