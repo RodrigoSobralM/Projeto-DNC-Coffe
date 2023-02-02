@@ -27,6 +27,3 @@ Baixe o arquivo zip do repositório e extraia para seu computador. Ou acesse onl
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rodrigo-moreira-294b17192/)
 
 
-## 🚀 Sobre mim
-Eu sou uma pessoa desenvolvedora full-stack...
-
