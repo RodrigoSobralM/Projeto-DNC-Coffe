@@ -8,6 +8,7 @@ const text = [
 var intervalId
 var progress = 0
 var progressContainer = document.querySelector('#progress-container')
+
 function atualizarProgresso() {
     progress +=10;
     progressContainer.innerHTML = progress + "%"
@@ -19,6 +20,7 @@ function atualizarProgresso() {
 window.onload = function() {
     intervalId = setInterval(atualizarProgresso, 600);
 }
+
 function expandir(selector1, selector2, selector3) {
         let cards = document.querySelectorAll(selector1)
         let texts = document.querySelectorAll(selector2)
@@ -27,7 +29,6 @@ function expandir(selector1, selector2, selector3) {
 
         for(let i = 0; i < cards.length; i++) { 
             texts[i].innerHTML = text[arrayCard.indexOf(cards[i])].paragraph
-            cards[i].style.height = '434px';
             btnCard[i].style.visibility = 'visible'
         }
 }   
@@ -38,7 +39,6 @@ function restaurar(selector1, selector2 ,selector3) {
     let texts = document.querySelectorAll(selector2)
     let btnCard = document.querySelectorAll(selector3)
     for(let i = 0; i < cards.length; i++) {
-        cards[i].style.height = '337px'
         texts[i].innerHTML = '...'
         btnCard[i].style.visibility = 'hidden'
     }

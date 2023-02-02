@@ -142,8 +142,13 @@ section {
     flex-direction: column;
     align-items: center;
     padding: 0;
-    margin-bottom: 52px;
+
     margin-left: 24px;
+    transition: height 0.5s;
+}
+
+.card:hover {
+    height: 447px;
 }
 
 .card img {
@@ -327,6 +332,7 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     .card {
