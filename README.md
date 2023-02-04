@@ -2,7 +2,7 @@
 
 **Motivação**
 
-Projeto disciplinar aplicado pela escola DNC (Formação em tecnologia - Desencvolvimento Full-stack).
+Projeto disciplinar aplicado pela escola DNC (Formação em tecnologia - Desenvolvimento Full-stack).
 
 **Finalidade:** Implementar os ensinos e liguagens aprendidos no decorrer do curso na parte de front-end.
 
