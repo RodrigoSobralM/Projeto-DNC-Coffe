@@ -80,15 +80,23 @@ header {
     list-style-type: none;
     align-items: center;
     gap: 55px;
+    padding: 0 0 0 45px;
+    width: 100%;
+    color: #2A3342;
+}
+
+.navBar ul li {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
     align-items: center;
-    color: #2A3342;
-    padding: 0 0 0 45px;
-    width: 100%;
+    
+}
+
+.navBar a:hover {
+    color: #D1D1D1;
 }
 
 header button {
@@ -111,7 +119,9 @@ header button {
 header button:hover {
     background: #D1D1D1;
 }
+
 /* Estilo do banner principal da main */
+
 #bannerPrincipal {
     width: 100%;
 }
