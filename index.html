@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/svg" href="img/icon.svg"/>
+    <title>DNC coffe</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Montserrat:wght@300&family=Poppins:wght@500&family=Raleway:wght@700&display=swap" rel="stylesheet">
-
+    <script src="modal.js"></script>
 </head>
 <body>
+    <div class="loading-page">
+        <img src="img/iconLoad.svg" alt="">
+        <h1>DNC Coffee</h1>
+        <div id="progress-bar"></div>
+        <div id="progress-container">0%</div>
+        
+    </div>
     <header>
         <div class="navBar">
             <img src="img/logo.svg" alt="">
@@ -20,79 +28,86 @@
                     <a href="">Home</a>
                 </li>
                 <li>
-                    <a href="" onclick="showModal()">sobre</a>
+                    <a onclick="showModal()">Sobre</a>
                 </li>
                 <li>
-                    <a href="">Ajuda</a>
+                    <a onclick="showModalAt()">Atendimento</a>
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="btnNavBar">
             <button>Fazer pedido</button>
         </div>
     </header>
     <main>
-        <img src="img/bannerPrin.svg" alt="">
+        <div id="bannerPrincipal">
+            <img src="img/bannerPrin.svg" alt="">
+        </div>
     </main>
     <section>
         <div id="cards">
-            <div class="card" onmouseover="expandir()" onmouseout="expandir()" onmouseleave="restaurar('#card1')">
-                <div>
-                    <img src="img/card1.svg" alt="">
-                    
-                </div>
+            <div class="card" onmouseover="expandir('#card1','.textCard1','#btn1')" onmouseout="restaurar('#card1','.textCard1','#btn1')" id="card1" >
+                
                 <div class="textCard">
+                    <div>
+                        <img src="img/card1.svg" alt=""> 
+                    </div>
                     <p>Nossa loja de café se encontra em um lugar, 
                         100% fictício, porém caso se sinta interessado
-                        pode vir tomar um café conosco em nossa sed<span id="allCard">...</span>
+                        pode vir tomar um café conosco em nossa sed<span id="allCard" class="textCard1">...</span>
                     </p>
-                </div>
-                <div  onmouseleave="restaurar()">
-                    <button class="btnCard">COMPRAR AGORA</button>
+                    <div class="btnCard" id="btn1" >
+                        <button>COMPRAR AGORA</button>
+                    </div>
                 </div>
             </div>
-            <div class="card" onmouseover="expandir()" onmouseout="expandir()" onmouseleave="restaurar('#card2')">
+            <div class="card" onmouseover="expandir('#card2','.textCard2','#btn2')" onmouseout="restaurar('#card2','.textCard2','#btn2')" id="card2">
                 <div>
                     <img src="img/card2.svg" alt="">
                 </div>
                 <div class="textCard">
                     <p>Nossa casa de café é a melhor da região, aqui
                         você tem tudo que precisa, uma boa conversar,
-                        bons amigos e um ambiente sem igual<span id="allCard">...</span>
+                        bons amigos e um ambiente sem igual.<span id="allCard" class="textCard2" >...</span>
                     </p>
-                </div>
-                <div onmouseleave="restaurar()" >
-                    <button class="btnCard">COMPRAR AGORA</button>
+                    <div class="btnCard" id="btn2" >
+                        <button>COMPRAR AGORA</button>
+                    </div>
                 </div>
             </div>
-            <div class="card" onmouseover="expandir()" onmouseout="expandir()" onmouseleave="restaurar('#card3')">
+            <div class="card" onmouseover="expandir('#card3','.textCard3','#btn3')" onmouseout="restaurar('#card3','.textCard3','#btn3')" id="card3">
                 <div>
                     <img src="img/card3.svg" alt="">
                 </div>
                 <div class="textCard">
-                    <p>Por que a DNC? Porque podem contar sempre
+                    <p>
+                        Por que a DNC? Porque podem contar sempre
                         com um serviço genuíno, uma atmosfera
-                        acolhedora e uma incrível xícara de café,<span id="allCard">...</span></p>
-                </div>
-                <div  onmouseleave="restaurar()">
-                    <button class="btnCard">COMPRAR AGORA</button>
+                        acolhedora e uma incrível xícara de café,<span id="allCard" class="textCard3">...</span>
+                    </p>
+                    <div class="btnCard" id="btn3" >
+                        <button>COMPRAR AGORA</button>
+                    </div>
                 </div>
             </div>
-            <div class="card" onmouseover="expandir()" onmouseout="expandir()">
+            <div class="card" onmouseover="expandir('#card4','.textCard4','#btn4')" onmouseout="restaurar('#card4','.textCard4','#btn4')" id="card4">
                 <div>
                     <img src="img/card4.svg" alt="">
                 </div>
                 <div class="textCard">
-                    <p>A escola especialista em formar talentos, com foco em empregabilidade, migração de carreira e aumento de performance.</p>
-                </div>
-                <div  onmouseleave="restaurar()">
-                    <button class="btnCard">COMPRAR AGORA</button>
+                    <p>
+                        A escola especialista em formar talentos, com 
+                        foco em empregabilidade, migração de carreira 
+                        e aumento de performance.<span id="allCard" class="textCard4">...</span>
+                    </p>
+                    <div class="btnCard" id="btn4" >
+                        <button>COMPRAR AGORA</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="modal"></div>
     </section>
-    <div id="modal"></div>
-    
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

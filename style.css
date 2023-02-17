@@ -3,12 +3,59 @@ body {
     background: #F6F5FB;
 }
 
+/* Estilo load page */
+
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-image: url('img/loadPage.svg');
+    background-color: #283242;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-page h1 {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 69px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+#progress-container {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 69px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+#progress-bar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #283242;;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
 
 /* Estilo da barra de navegação e links */
 
 a {
     text-decoration: none;
     color: #2A3342;
+    cursor: pointer;
 }
 
 header {
@@ -17,29 +64,41 @@ header {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 80px;
+    width: 100%;
     justify-content: space-between;
 }
+
 .navBar {
     width: 55%;
     display: flex;
     margin-left: 30px;
     align-items: center;
 }
+
 .navBar ul {
     display: flex;
     list-style-type: none;
     align-items: center;
     gap: 55px;
+    padding: 0 0 0 45px;
+    width: 100%;
+    color: #2A3342;
+}
+
+.navBar ul li {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    display: flex;
     align-items: center;
-    color: #2A3342;
-    padding: 0 0 0 45px;
+    
 }
+
+.navBar a:hover {
+    color: #D1D1D1;
+}
+
 header button {
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -54,11 +113,19 @@ header button {
     line-height: 20px;
     color: #000000;
     margin-right: 40px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background: #D1D1D1;
 }
 
 /* Estilo do banner principal da main */
 
-main img {
+#bannerPrincipal {
+    width: 100%;
+}
+#bannerPrincipal img {
     width: 100%;
 }
 
@@ -70,9 +137,11 @@ section {
 #cards {
     display: flex;
     gap: 24px;
+    width: 100%;
     margin-top: 35px;
     margin-bottom: 38px;
 }
+
 .card {
     width: 330px;
     height: 337px;
@@ -83,17 +152,25 @@ section {
     flex-direction: column;
     align-items: center;
     padding: 0;
-    margin-bottom: 38px;
+    margin-bottom: 80px;
     margin-left: 24px;
+    transition: height 0.5s;
 }
+
+.card:hover {
+    height: 447px;
+}
+
 .card img {
-    border-radius: 8px 8px 0 0;
-    align-self: stretch;
+    border-radius: 8px 8px  0 0;
 }
+
 .textCard {
     overflow: hidden;
 }
+
 .card p {
+    position: relative;
     padding: 16px;
     font-family: 'Segoe UI';
     font-style: normal;
@@ -102,10 +179,15 @@ section {
     line-height: 20px;
     color: #252423;
     margin-top: -5px;
-    text-align: left;
+    margin-bottom: 0;
 }
 
-.card button {
+.btnCard {
+    text-align: center;
+    visibility: hidden;
+}
+.btnCard button{
+    top: 337px;
     background: #2A3342;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -117,12 +199,168 @@ section {
     font-size: 20px;
     line-height: 20px;
     color: #F6F5FB;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Estilo do modal */
+
+#modal {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    background: rgba(217, 217, 217, 0.7);
+    visibility: hidden;
+}
+
+#modal-card {
+    background: white;
+    width: 671px;
+    height: 581px;
+    border-radius: 20px;
+
+}
+
+#closeModal img {
+    margin-top: 31.75px;
+    margin-left: 628.25px;
+    cursor: pointer;
+}
+
+#modal-card h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 20px;
+    color: #000000;
+    text-align: center;
+    margin-top: 37.75px;
     
 }
 
-/* Estilo utilizado pela função toggle no js */
-.card-highLigth {
-    height: 500px;
+#modal-card p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 69px;
+    text-align: center;
+    color: #000000;
+    padding: 0 52px 0 51px;
+}
+
+#logoModal img{
+    margin-top: 20px;
+    margin-left: 270px;
+}
+
+#textModalAt h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 39px;
+    line-height: 20px;
+    color: #000000;
+    margin-top: 70.75px;
+}
+
+#textModalAt p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 40px;
+    text-align: center;
+    color: #000000;
+    padding: 0 57px 0 46px;
+}
+
+#buttonModal {
+    text-align: center;
+    
+}
+#buttonModal button {
+    background: #2A3342;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 253px;
+    height: 48px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #F6F5FB;
+    margin-top: 65px;
+    cursor: pointer;
+}
+/* Esilização mobile */
+
+@media only screen and (max-width: 600px) {
+    
+    .navBar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        margin: 0;
+        padding: 40;
+    }
+
+    .btnNavBar {
+        margin-top: -60px;
+        width: 100%;
+        margin-left: 50px;
+    }
+
+    .navBar ul {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        
+    }
+    
+    .navBar ul li {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 42px;
+    }
+
+    header {
+        height: 150px;
+    }
+
+    #cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        margin-left: 43px;
+    }
+
+    #bannerPrincipal img {
+        width: 100%;   
+    }
+
+    #modal-card {
+        width: 620px;
+    }
+}
+/* Animação de loading */
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }

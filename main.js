@@ -1,30 +1,46 @@
 const text = [
-    {paragraph: 'e em São José dos Campos.' },
-    {paragraph: '. Aproveite, pois Melhor que a DNC não existe!'},
+    {paragraph: 'e em São José dos Campos.'},
+    {paragraph: ' Aproveite, pois Melhor que a DNC não existe!'},
     {paragraph: ' torrado por especialistas e preparado de forma enriquecedora.'},
-]
-let texts = document.querySelectorAll('#allCard')
-let card = document.querySelectorAll('.card')
-let btnCard = document.querySelectorAll('.btnCard')
+    {paragraph: ''}
+];
 
+var intervalId
+var progress = 0
+var progressContainer = document.querySelector('#progress-container')
 
-
-function expandir() {
-    for(let i = 0; i < text.length; i++) {
-        texts[i].innerHTML = text[i].paragraph
-    }
-
-    for(let i = 0; i < card.length; i++){
-        card[i].classList.toggle('card-highLigth')
+function atualizarProgresso() {
+    progress +=10;
+    progressContainer.innerHTML = progress + "%"
+    if(progress == 110) {
+        clearInterval(intervalId)
+        document.querySelector('.loading-page').style.display = 'none'
     }
 }
+window.onload = function() {
+    intervalId = setInterval(atualizarProgresso, 600);
+}
 
-function restaurar() {
-    for(let i = 0; i < btnCard; i++){
-        btnCard.style.visibility = 'hidden'
+function expandir(selector1, selector2, selector3) {
+        let cards = document.querySelectorAll(selector1)
+        let texts = document.querySelectorAll(selector2)
+        let btnCard = document.querySelectorAll(selector3)
+        let arrayCard = Array.from(document.querySelectorAll('.card'))
+
+        for(let i = 0; i < cards.length; i++) { 
+            texts[i].innerHTML = text[arrayCard.indexOf(cards[i])].paragraph
+            btnCard[i].style.visibility = 'visible'
+        }
+}   
+
+function restaurar(selector1, selector2 ,selector3) {
+
+    let cards = document.querySelectorAll(selector1)
+    let texts = document.querySelectorAll(selector2)
+    let btnCard = document.querySelectorAll(selector3)
+    for(let i = 0; i < cards.length; i++) {
+        texts[i].innerHTML = '...'
+        btnCard[i].style.visibility = 'hidden'
     }
     
-    for(let i = 0; i < texts.length; i++) {
-        texts[i].innerHTML = '...'
-    }
 }
