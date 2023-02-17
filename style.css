@@ -229,6 +229,7 @@ section {
 #closeModal img {
     margin-top: 31.75px;
     margin-left: 628.25px;
+    cursor: pointer;
 }
 
 #modal-card h1 {
